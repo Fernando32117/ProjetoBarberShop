@@ -5,6 +5,7 @@ import { MenuIcon } from "lucide-react"
 import { Sheet, SheetTrigger } from "./ui/sheet"
 import SidebarSheet from "./sidebar-sheet"
 import Link from "next/link"
+import { ThemeToggle } from "./theme-toggle"
 
 const Header = () => {
   return (
@@ -13,15 +14,17 @@ const Header = () => {
         <Link href="/">
           <Image alt="FSW Barber" src="/logo.png" height={18} width={120} />
         </Link>
-
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <MenuIcon />
-            </Button>
-          </SheetTrigger>
-          <SidebarSheet />
-        </Sheet>
+        <div className="flex items-center gap-x-2">
+          <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline">
+                <MenuIcon />
+              </Button>
+            </SheetTrigger>
+            <SidebarSheet />
+          </Sheet>
+        </div>
       </CardContent>
     </Card>
   )

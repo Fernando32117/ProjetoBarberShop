@@ -4,6 +4,7 @@ import "./globals.css"
 import { Toaster } from "sonner"
 import Footer from "./_components/footer"
 import AuthProvider from "./_providers/auth"
+import { ThemeProvider } from "./_providers/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,15 +19,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <AuthProvider>
-          <div className="flex h-full flex-col">
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
-        </AuthProvider>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AuthProvider>
+            <div className="flex h-full flex-col">
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
+          </AuthProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )
