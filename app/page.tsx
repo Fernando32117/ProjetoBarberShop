@@ -30,7 +30,7 @@ const Home = async () => {
       <div className="p-5 md:p-10">
         {/* TEXTO */}
         <h2 className="text-xl font-bold md:mb-7 md:mt-10 md:text-[50px]">
-          Olá, {session?.user ? session.user.name : "bem vindo"}!
+          Olá, {session?.user ? session.user.name : "faça login para agendar"} !
         </h2>
         <p className="md:mb-10 md:text-[20px]">
           <span className="capitalize">
@@ -71,7 +71,7 @@ const Home = async () => {
         </div>
 
         {/* IMAGEM */}
-        <div className="relative mt-6 h-[150px] w-full md:h-[550px]">
+        <div className="relative mt-6 h-[150px] w-full md:h-[500px]">
           <Image
             alt="Agende nos melhores com Barbershops"
             src="/banner3.jpg"
@@ -98,19 +98,19 @@ const Home = async () => {
           </>
         )}
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 md:mt-[50px] md:text-[20px]">
           Recomendados
         </h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-5 md:gap-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 md:mt-[50px] md:text-[20px]">
           Populares
         </h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-5 md:gap-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
           {popularBarbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}

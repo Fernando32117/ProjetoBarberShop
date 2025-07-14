@@ -12,8 +12,8 @@ interface BarbershopItemProps {
 
 const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
   return (
-    <Card className="min-w-[167px] rounded-2xl">
-      <CardContent className="p-0 px-1 pt-1">
+    <Card className="min-w-[167px] rounded-2xl md:w-full">
+      <CardContent className="p-0 px-1 pt-1 md:px-3 md:py-5 md:pt-3">
         {/* IMAGEM */}
         <div className="relative h-[159px] w-full">
           <Image
@@ -24,19 +24,27 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
           />
 
           <Badge
-            className="absolute left-2 top-2 space-x-1"
+            className="absolute left-2 top-2 space-x-1 md:px-5 md:py-2"
             variant="secondary"
           >
             <StarIcon size={12} className="fill-primary text-primary" />
-            <p className="text-xs font-semibold">5,0</p>
+            <p className="text-xs font-semibold md:text-lg">5,0</p>
           </Badge>
         </div>
 
         {/* TEXTO */}
         <div className="px-1 py-3">
-          <h3 className="truncate font-semibold">{barbershop.name}</h3>
-          <p className="truncate text-sm text-gray-400">{barbershop.address}</p>
-          <Button variant="secondary" className="mt-3 w-full" asChild>
+          <h3 className="truncate font-semibold md:text-lg">
+            {barbershop.name}
+          </h3>
+          <p className="truncate text-sm text-gray-400 md:text-lg">
+            {barbershop.address}
+          </p>
+          <Button
+            variant="secondary"
+            className="mt-3 w-full md:text-lg"
+            asChild
+          >
             <Link href={`/barbershops/${barbershop.id}`}>Reservar</Link>
           </Button>
         </div>
