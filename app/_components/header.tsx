@@ -9,7 +9,7 @@ import { ThemeToggle } from "./theme-toggle"
 const Header = () => {
   return (
     <Card className="rounded-t-none">
-      <CardContent className="flex flex-row items-center justify-between p-5 md:p-10">
+      <CardContent className="flex flex-row items-center justify-between p-5 md:p-8">
         <Link href="/">
           <h1 className="text-xl font-bold md:text-[40px]">
             <span className="text-primary">BARBER</span>
