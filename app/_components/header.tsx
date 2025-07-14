@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Card, CardContent } from "./ui/card"
 import { Button } from "./ui/button"
 import { MenuIcon } from "lucide-react"
@@ -12,7 +11,10 @@ const Header = () => {
     <Card>
       <CardContent className="flex flex-row items-center justify-between p-5">
         <Link href="/">
-          <Image alt="FSW Barber" src="/logo.png" height={18} width={120} />
+          <h1 className="text-xl font-bold">
+            <span className="text-primary">BARBER</span>
+            <span className="font-light">SHOP</span>
+          </h1>
         </Link>
         <div className="flex items-center gap-x-2">
           <ThemeToggle />

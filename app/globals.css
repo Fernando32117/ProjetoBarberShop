@@ -3,68 +3,80 @@
 @tailwind utilities;
 
 @layer base {
-  /* (LIGHT MODE) */
+  /* TEMA CLARO (LIGHT MODE) - Versão Neutra e Quente */
   :root {
-    --background: 330 16% 88%;
-    --foreground: 334 17% 10%;
+    /* Fundo e Texto Principal */
+    --background: 35 50% 98%; /* Fundo em um tom de "linho" ou off-white quente */
+    --foreground: 25 15% 15%; /* Texto em marrom escuro para alto contraste */
 
-    --card: 336 31% 94%;
-    --card-foreground: 334 17% 10%;
+    /* Cards e Popovers */
+    --card: 0 0% 100%; /* Cards em branco puro para se destacarem do fundo */
+    --card-foreground: 25 15% 15%;
 
-    --popover: 330 18% 94%;
-    --popover-foreground: 334 17% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 336 62% 24%;
-    --primary-foreground: 330 33% 95%;
+    /* Cor Primária (Botões e Destaques) */
+    --primary: 25 15% 15%; /* Botões primários usam o mesmo marrom escuro do texto */
+    --primary-foreground: 35 50% 98%; /* Texto do botão usa a cor clara do fundo */
 
-    --secondary: 334 30% 85%;
-    --secondary-foreground: 336 62% 24%;
+    /* Cores Secundárias e "Muted" */
+    --secondary: 35 20% 94%; /* Um bege bem claro para fundos secundários */
+    --secondary-foreground: 25 15% 15%;
 
-    --muted: 330 14% 92%;
-    --muted-foreground: 330 2% 54%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 10% 45%; /* Cinza quente para textos com menos destaque */
 
-    --accent: 336 19% 58%;
-    --accent-foreground: 336 62% 24%;
+    /* Cor de "Accent" */
+    --accent: 35 20% 94%;
+    --accent-foreground: 25 15% 15%;
 
-    --destructive: 2 100% 48%;
-    --destructive-foreground: 330 33% 95%;
+    /* Cor Destrutiva (Erros) */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 50% 98%;
 
-    --border: 330 3% 58%;
-    --input: 330 3% 58%;
-    --ring: 336 26% 46%;
+    /* Bordas, Inputs e Anel de Foco */
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 25 15% 15%;
 
     --radius: 0.5rem;
   }
 
-  /* (DARK MODE) */
   .dark {
-    --background: 225 9% 9%;
-    --foreground: 210 40% 98%;
+    --background: 25 15% 10%;
+    --foreground: 30 25% 92%;
 
-    --card: 228 9% 11%;
-    --card-foreground: 210 40% 98%;
+    /* Cards e Popovers */
+    --card: 25 15% 14%;
+    --card-foreground: 30 25% 92%;
 
-    --popover: 228 9% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 15% 14%;
+    --popover-foreground: 30 25% 92%;
 
-    --primary: 252 100% 69%;
-    --primary-foreground: 0 0% 100%;
+    /* Cor Primária (Botões e Destaques) */
+    --primary: 30 45% 65%;
+    --primary-foreground: 25 15% 10%;
 
-    --secondary: 228 6% 16%;
-    --secondary-foreground: 210 40% 98%;
+    /* Cores Secundárias e "Muted" */
+    --secondary: 25 10% 20%;
+    --secondary-foreground: 30 25% 92%;
 
-    --muted: 228 6% 16%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 10% 20%;
+    --muted-foreground: 30 15% 60%;
 
-    --accent: 228 6% 16%;
-    --accent-foreground: 210 40% 98%;
+    /* Cor de "Accent" */
+    --accent: 25 10% 25%;
+    --accent-foreground: 30 25% 92%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    /* Cor Destrutiva (Erros) */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 20 25% 95%;
 
-    --border: 228 6% 16%;
-    --input: 228 6% 16%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Bordas, Inputs e Anel de Foco */
+    --border: 25 15% 22%;
+    --input: 25 15% 18%;
+    --ring: 30 45% 70%;
 
     --radius: 0.5rem;
   }
