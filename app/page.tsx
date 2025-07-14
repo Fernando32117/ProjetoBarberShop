@@ -27,12 +27,12 @@ const Home = async () => {
     <div>
       {/* header */}
       <Header />
-      <div className="p-5">
+      <div className="p-5 md:p-10">
         {/* TEXTO */}
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold md:mb-7 md:mt-10 md:text-[50px]">
           Olá, {session?.user ? session.user.name : "bem vindo"}!
         </h2>
-        <p>
+        <p className="md:mb-10 md:text-[20px]">
           <span className="capitalize">
             {format(new Date(), "EEEE, dd", { locale: ptBR })}
           </span>
@@ -48,10 +48,11 @@ const Home = async () => {
         </div>
 
         {/* BUSCA RÁPIDA */}
-        <div className="mt-6 flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+        <div className="mt-6 flex gap-2 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
           {quickSearchOptions.map((option) => (
             <Button
-              className="gap-2"
+              className="gap-2 rounded-lg px-4 py-2 text-sm shadow-md md:gap-1 md:rounded-xl md:px-20 md:py-8 md:text-lg"
+              size="lg"
               variant="secondary"
               key={option.title}
               asChild
@@ -70,10 +71,10 @@ const Home = async () => {
         </div>
 
         {/* IMAGEM */}
-        <div className="relative mt-6 h-[150px] w-full">
+        <div className="relative mt-6 h-[150px] w-full md:h-[550px]">
           <Image
-            alt="Agende nos melhores com FSW Barber"
-            src="/barberShop.png"
+            alt="Agende nos melhores com Barbershops"
+            src="/banner3.jpg"
             fill
             className="rounded-xl object-cover"
           />

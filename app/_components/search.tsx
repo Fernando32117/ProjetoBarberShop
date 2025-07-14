@@ -41,14 +41,14 @@ const Search = () => {
                 <Input
                   placeholder="Faça sua busca..."
                   {...field}
-                  className="w-full"
+                  className="w-full md:h-[60px] md:text-[20px]"
                 />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">
+        <Button type="submit" className="md:h-[60px] md:w-[100px]">
           <SearchIcon />
         </Button>
       </form>

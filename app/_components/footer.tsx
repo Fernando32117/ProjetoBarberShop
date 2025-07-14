@@ -4,10 +4,10 @@ import { Card, CardContent } from "./ui/card"
 const Footer = () => {
   return (
     <footer className="mt-auto">
-      <Card>
-        <CardContent className="flex items-center justify-between p-5">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()}{" "}
+      <Card className="rounded-b-none">
+        <CardContent className="flex items-center justify-between p-5 md:p-10">
+          <p className="text-sm text-muted-foreground md:text-[20px]">
+            ©{" "}
             <span className="font-bold text-primary">
               <a
                 href="https://www.linkedin.com/in/gerfernandosouza/"
@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/gerfernandosouza/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-x-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="flex items-center gap-x-2 text-sm text-muted-foreground transition-colors hover:text-primary md:text-[20px]"
             >
               <Linkedin size={18} />
               LinkedIn
@@ -32,7 +32,7 @@ const Footer = () => {
               href="https://portifolio-fernando-souza.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-x-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="flex items-center gap-x-2 text-sm text-muted-foreground transition-colors hover:text-primary md:text-[20px]"
             >
               <Globe size={18} />
               Portfólio
