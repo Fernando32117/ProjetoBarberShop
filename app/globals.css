@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 @layer base {
-  /* TEMA CLARO (LIGHT MODE) - Versão Neutra e Quente */
+  /* TEMA CLARO (LIGHT MODE) */
   :root {
     /* Fundo e Texto Principal */
-    --background: 35 50% 98%; /* Fundo em um tom de "linho" ou off-white quente */
-    --foreground: 25 15% 15%; /* Texto em marrom escuro para alto contraste */
+    --background: 35 50% 98%;
+    --foreground: 25 35% 38%;
 
     /* Cards e Popovers */
-    --card: 0 0% 100%; /* Cards em branco puro para se destacarem do fundo */
-    --card-foreground: 25 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 35% 38%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 15% 15%;
+    --popover-foreground: 25 35% 38%;
 
-    /* Cor Primária (Botões e Destaques) */
-    --primary: 25 15% 15%; /* Botões primários usam o mesmo marrom escuro do texto */
-    --primary-foreground: 35 50% 98%; /* Texto do botão usa a cor clara do fundo */
+    /* Cor Primária */
+    --primary: 25 50% 35%;
+    --primary-foreground: 35 50% 98%;
 
     /* Cores Secundárias e "Muted" */
-    --secondary: 35 20% 94%; /* Um bege bem claro para fundos secundários */
-    --secondary-foreground: 25 15% 15%;
+    --secondary: 35 20% 94%;
+    --secondary-foreground: 25 35% 38%;
 
     --muted: 35 20% 94%;
-    --muted-foreground: 30 10% 45%; /* Cinza quente para textos com menos destaque */
+    --muted-foreground: 30 25% 55%;
 
     /* Cor de "Accent" */
     --accent: 35 20% 94%;
-    --accent-foreground: 25 15% 15%;
+    --accent-foreground: 25 35% 38%;
 
     /* Cor Destrutiva (Erros) */
     --destructive: 0 84% 60%;
@@ -38,7 +38,7 @@
     /* Bordas, Inputs e Anel de Foco */
     --border: 35 15% 88%;
     --input: 35 15% 88%;
-    --ring: 25 15% 15%;
+    --ring: 25 50% 35%;
 
     --radius: 0.5rem;
   }

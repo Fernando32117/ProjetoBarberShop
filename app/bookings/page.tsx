@@ -25,7 +25,7 @@ const Bookings = async () => {
         )}
         {confirmedBookings.length > 0 && (
           <>
-            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 md:text-sm">
               Confirmados
             </h2>
             <div className="gap-2 space-y-2 md:grid md:grid-cols-3 md:space-y-0">
@@ -40,7 +40,7 @@ const Bookings = async () => {
         )}
         {concludedBookings.length > 0 && (
           <>
-            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 md:text-sm">
               Finalizados
             </h2>
             {concludedBookings.map((booking) => (
