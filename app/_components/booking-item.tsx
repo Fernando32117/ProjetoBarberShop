@@ -104,7 +104,9 @@ const BookingItem = ({ booking }: BookingItemProps) => {
       </SheetTrigger>
       <SheetContent className="w-[85%]">
         <SheetHeader>
-          <SheetTitle className="text-left">Informações da Reserva</SheetTitle>
+          <SheetTitle className="text-left md:text-[22px]">
+            Informações da Reserva
+          </SheetTitle>
         </SheetHeader>
 
         <div className="relative mt-6 flex h-[180px] w-full items-end">
@@ -131,13 +133,13 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
         <div className="mt-6">
           <Badge
-            className="w-fit"
+            className="w-fit md:px-5 md:py-2 md:text-[18px]"
             variant={isConfirmed ? "default" : "secondary"}
           >
             {isConfirmed ? "Confirmado" : "Finalizado"}
           </Badge>
 
-          <div className="mb-3 mt-6">
+          <div className="mb-3 mt-6 md:mb-6">
             <BookingSummary
               barbershop={barbershop}
               service={booking.service}

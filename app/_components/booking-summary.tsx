@@ -18,8 +18,8 @@ const BookingSummary = ({
     <Card>
       <CardContent className="space-y-3 p-3">
         <div className="flex items-center justify-between">
-          <h2 className="font-bold">{service.name}</h2>
-          <p className="text-sm font-bold">
+          <h2 className="font-bold md:text-lg">{service.name}</h2>
+          <p className="text-sm font-bold md:text-lg">
             {Intl.NumberFormat("pt-BR", {
               style: "currency",
               currency: "BRL",
@@ -28,8 +28,8 @@ const BookingSummary = ({
         </div>
 
         <div className="flex items-center justify-between">
-          <h2 className="text-sm text-gray-400">Data</h2>
-          <p className="text-sm">
+          <h2 className="text-sm text-gray-400 md:text-lg">Data</h2>
+          <p className="text-sm md:text-lg">
             {format(selectedDate, "d 'de' MMMM", {
               locale: ptBR,
             })}
@@ -37,13 +37,13 @@ const BookingSummary = ({
         </div>
 
         <div className="flex items-center justify-between">
-          <h2 className="text-sm text-gray-400">Horário</h2>
-          <p className="text-sm">{format(selectedDate, "HH:mm")}</p>
+          <h2 className="text-sm text-gray-400 md:text-lg">Horário</h2>
+          <p className="text-sm md:text-lg">{format(selectedDate, "HH:mm")}</p>
         </div>
 
         <div className="flex items-center justify-between">
-          <h2 className="text-sm text-gray-400">Barbearia</h2>
-          <p className="text-sm">{barbershop.name}</p>
+          <h2 className="text-sm text-gray-400 md:text-lg">Barbearia</h2>
+          <p className="text-sm md:text-lg">{barbershop.name}</p>
         </div>
       </CardContent>
     </Card>
