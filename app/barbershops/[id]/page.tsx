@@ -38,13 +38,14 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
           alt={barbershop.name}
           src={barbershop?.imageUrl}
           fill
+          quality={100}
           className="object-cover"
         />
 
         <Button
           size="icon"
           variant="secondary"
-          className="absolute left-4 top-4"
+          className="absolute left-4 top-4 md:h-[60px] md:w-[60px]"
           asChild
         >
           <Link href="/">
@@ -57,7 +58,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
             <Button
               size="icon"
               variant="outline"
-              className="absolute right-4 top-4"
+              className="absolute right-4 top-4 md:h-[60px] md:w-[60px]"
             >
               <MenuIcon />
             </Button>
@@ -68,28 +69,40 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
 
       {/* TÍTULO */}
       <div className="border-b border-solid p-5">
-        <h1 className="mb-3 text-xl font-bold">{barbershop.name}</h1>
+        <h1 className="mb-3 text-xl font-bold md:text-[30px]">
+          {barbershop.name}
+        </h1>
         <div className="mb-2 flex items-center gap-2">
-          <MapPinIcon className="text-primary" size={18} />
-          <p className="text-sm">{barbershop?.address}</p>
+          <MapPinIcon className="text-primary md:size-6" size={18} />
+          <p className="text-sm md:text-[18px] md:font-light">
+            {barbershop?.address}
+          </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <StarIcon className="fill-primary text-primary" size={18} />
-          <p className="text-sm">5,0 (499 avaliações)</p>
+          <StarIcon className="fill-primary text-primary md:size-6" size={18} />
+          <p className="text-sm md:text-[18px] md:font-light">
+            5,0 (499 avaliações)
+          </p>
         </div>
       </div>
 
       {/* DESCRIÇÃO */}
       <div className="space-y-2 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Sobre nós</h2>
-        <p className="text-justify text-sm">{barbershop?.description}</p>
+        <h2 className="text-xs font-bold uppercase text-gray-400 md:text-[18px]">
+          Sobre nós
+        </h2>
+        <p className="text-justify text-sm md:text-[18px] md:font-light">
+          {barbershop?.description}
+        </p>
       </div>
 
       {/* SERVIÇOS */}
       <div className="space-y-3 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Serviços</h2>
-        <div className="space-y-3">
+        <h2 className="text-xs font-bold uppercase text-gray-400 md:text-[18px]">
+          Serviços
+        </h2>
+        <div className="gap-3 space-y-3 md:grid md:grid-cols-3 md:space-y-0">
           {barbershop.services.map((service) => (
             <ServiceItem
               key={service.id}
@@ -101,7 +114,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
       </div>
 
       {/* CONTATO */}
-      <div className="space-y-3 p-5">
+      <div className="space-y-3 p-5 md:space-y-5 md:py-10">
         {barbershop.phones.map((phone) => (
           <PhoneItem key={phone} phone={phone} />
         ))}

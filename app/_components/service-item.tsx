@@ -163,24 +163,29 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
 
   return (
     <>
-      <Card>
-        <CardContent className="flex items-center gap-3 p-3">
+      <Card className="cursor-pointer justify-between shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:h-[250px] md:w-auto">
+        <CardContent className="flex items-center justify-between gap-2 p-3">
           {/* IMAGE */}
-          <div className="relative max-h-[110px] min-h-[110px] min-w-[110px] max-w-[110px]">
+          <div className="relative h-[110px] w-[110px] md:h-[220px] md:w-[220px]">
             <Image
               alt={service.name}
               src={service.imageUrl}
               fill
-              className="rounded-lg object-cover"
+              quality={100}
+              className="rounded-lg"
             />
           </div>
           {/* DIREITA */}
-          <div className="space-y-2">
-            <h3 className="text-sm font-semibold">{service.name}</h3>
-            <p className="text-sm text-gray-400">{service.description}</p>
+          <div className="space-y-2 md:space-y-4 md:px-5 md:py-8">
+            <h3 className="text-sm font-semibold md:text-[18px]">
+              {service.name}
+            </h3>
+            <p className="text-sm text-gray-400 md:text-[18px]">
+              {service.description}
+            </p>
             {/* PREÇO E BOTÃO */}
             <div className="flex items-center justify-between">
-              <p className="text-sm font-bold text-primary">
+              <p className="text-sm font-bold text-primary md:text-[18px]">
                 {Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",
@@ -195,6 +200,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   variant="secondary"
                   size="sm"
                   onClick={handleBookingClick}
+                  className="md:text-[22px] md:font-semibold"
                 >
                   Reservar
                 </Button>

@@ -48,6 +48,7 @@ const Home = async () => {
             alt="Agende nos melhores com Barbershops"
             src="/banner3.jpg"
             fill
+            quality={100}
             className="rounded-xl object-cover"
           />
         </div>

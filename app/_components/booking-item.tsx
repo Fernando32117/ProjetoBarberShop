@@ -112,6 +112,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
             alt={`Mapa da barbearia ${booking.service.barbershop.name}`}
             src="/map.png"
             fill
+            quality={100}
             className="rounded-xl object-cover"
           />
 
