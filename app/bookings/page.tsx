@@ -28,12 +28,14 @@ const Bookings = async () => {
             <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
               Confirmados
             </h2>
-            {confirmedBookings.map((booking) => (
-              <BookingItem
-                key={booking.id}
-                booking={JSON.parse(JSON.stringify(booking))}
-              />
-            ))}
+            <div className="gap-2 space-y-2 md:grid md:grid-cols-3 md:space-y-0">
+              {confirmedBookings.map((booking) => (
+                <BookingItem
+                  key={booking.id}
+                  booking={JSON.parse(JSON.stringify(booking))}
+                />
+              ))}
+            </div>
           </>
         )}
         {concludedBookings.length > 0 && (
