@@ -18,7 +18,7 @@ const SidebarSheet = () => {
   return (
     <SheetContent className="overflow-y-auto">
       <SheetHeader>
-        <SheetTitle className="text-left">Menu</SheetTitle>
+        <SheetTitle className="text-left md:text-[20px]">Menu</SheetTitle>
       </SheetHeader>
 
       <div className="flex items-center justify-between gap-3 border-b border-solid py-5">
@@ -29,8 +29,8 @@ const SidebarSheet = () => {
             </Avatar>
 
             <div>
-              <p className="font-bold">{data.user.name}</p>
-              <p className="text-xs">{data.user.email}</p>
+              <p className="font-bold md:text-lg">{data.user.name}</p>
+              <p className="text-xs md:text-sm">{data.user.email}</p>
             </div>
           </div>
         ) : (
@@ -50,27 +50,41 @@ const SidebarSheet = () => {
         )}
       </div>
 
-      <div className="flex flex-col gap-2 border-b border-solid py-5">
+      <div className="flex flex-col border-b border-solid py-2 md:gap-2 md:py-5">
         <SheetClose asChild>
-          <Button className="justify-start gap-2" variant="ghost" asChild>
+          <Button
+            className="justify-start gap-2 font-light md:text-lg"
+            variant="ghost"
+            asChild
+          >
             <Link href="/">
-              <HomeIcon size={18} />
+              <HomeIcon size={18} className="md:size-6" />
               Início
             </Link>
           </Button>
         </SheetClose>
-        <Button className="justify-start gap-2" variant="ghost" asChild>
+        <Button
+          className="justify-start gap-2 font-light md:text-lg"
+          variant="ghost"
+          asChild
+        >
           <Link href="/bookings">
-            <CalendarIcon size={18} />
+            <CalendarIcon size={18} className="md:size-6" />
             Agendamentos
           </Link>
         </Button>
       </div>
 
+      <h1 className="pt-4 text-center font-light">Busca Rápida</h1>
+
       <div className="flex flex-col gap-2 border-b border-solid py-5">
         {quickSearchOptions.map((option) => (
           <SheetClose key={option.title} asChild>
-            <Button className="justify-start gap-2" variant="ghost" asChild>
+            <Button
+              className="justify-start gap-2 md:text-[18px]"
+              variant="outline"
+              asChild
+            >
               <Link href={`/barbershops?service=${option.title}`}>
                 <Image
                   alt={option.title}
@@ -89,10 +103,10 @@ const SidebarSheet = () => {
         <div className="flex flex-col gap-2 py-5">
           <Button
             variant="ghost"
-            className="justify-start gap-2"
+            className="justify-start gap-2 font-light md:text-lg"
             onClick={handleLogoutClick}
           >
-            <LogOutIcon size={18} />
+            <LogOutIcon size={18} className="md:size-6" />
             Sair da conta
           </Button>
         </div>
