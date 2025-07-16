@@ -11,7 +11,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./ui/sheet"
-import { Calendar } from "./ui/calendar"
 import { ptBR } from "date-fns/locale"
 import { useEffect, useMemo, useState } from "react"
 import { isPast, isToday, set } from "date-fns"
@@ -23,6 +22,8 @@ import { Dialog, DialogContent } from "./ui/dialog"
 import SignInDialog from "./sign-in-dialog"
 import BookingSummary from "./booking-summary"
 import { useRouter } from "next/navigation"
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel"
+import { Calendar } from "./ui/calendar"
 
 interface ServiceItemProps {
   service: BarbershopService
@@ -205,69 +206,59 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   Reservar
                 </Button>
 
-                <SheetContent className="px-0">
-                  <SheetHeader>
+                <SheetContent className="w-[85%] px-0">
+                  <SheetHeader className="items-center">
                     <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
-
-                  <div className="border-b border-solid py-5">
+                  <div className="flex justify-center border-b border-solid py-3">
                     <Calendar
                       mode="single"
                       locale={ptBR}
                       selected={selectedDay}
                       onSelect={handleDateSelect}
                       fromDate={new Date()}
-                      styles={{
-                        head_cell: {
-                          width: "100%",
-                          textTransform: "capitalize",
-                        },
-                        cell: {
-                          width: "100%",
-                        },
-                        button: {
-                          width: "100%",
-                        },
-                        nav_button_previous: {
-                          width: "32px",
-                          height: "32px",
-                        },
-                        nav_button_next: {
-                          width: "32px",
-                          height: "32px",
-                        },
-                        caption: {
-                          textTransform: "capitalize",
-                        },
-                      }}
+                      className="w-full rounded-md font-bold capitalize shadow-sm"
                     />
                   </div>
 
                   {selectedDay && (
-                    <div className="flex gap-3 overflow-x-auto border-b border-solid p-5 [&::-webkit-scrollbar]:hidden">
-                      {timeList.length > 0 ? (
-                        timeList.map((time) => (
-                          <Button
-                            key={time}
-                            variant={
-                              selectedTime === time ? "default" : "outline"
-                            }
-                            className="rounded-full"
-                            onClick={() => handleTimeSelect(time)}
-                          >
-                            {time}
-                          </Button>
-                        ))
-                      ) : (
-                        <p className="text-xs">
-                          Não há horários disponíveis para este dia.
-                        </p>
-                      )}
+                    <div className="p-5">
+                      <Carousel className="w-full">
+                        <CarouselContent className="-ml-1">
+                          {timeList.length > 0 ? (
+                            timeList.map((time) => (
+                              <CarouselItem
+                                key={time}
+                                className="basis-auto pl-1"
+                              >
+                                <Button
+                                  variant={
+                                    selectedTime === time
+                                      ? "default"
+                                      : "outline"
+                                  }
+                                  className="rounded-full"
+                                  onClick={() => handleTimeSelect(time)}
+                                >
+                                  {time}
+                                </Button>
+                              </CarouselItem>
+                            ))
+                          ) : (
+                            <p className="ml-2 text-xs md:text-[14px]">
+                              Não há horários disponíveis para este dia.
+                            </p>
+                          )}
+                        </CarouselContent>
+                      </Carousel>
                     </div>
                   )}
 
                   {selectedDate && (
                     <div className="p-5">
+                      <h1 className="pb-3 text-center">
+                        Resumo do Agendamento
+                      </h1>
                       <BookingSummary
                         barbershop={barbershop}
                         service={service}
@@ -275,10 +266,12 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                       />
                     </div>
                   )}
+
                   <SheetFooter className="mt-5 px-5">
                     <Button
                       onClick={handleCreateBooking}
                       disabled={!selectedDay || !selectedTime}
+                      className="md:w-full md:text-lg"
                     >
                       Confirmar
                     </Button>
